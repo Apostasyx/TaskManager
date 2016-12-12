@@ -3,24 +3,27 @@
  */
 
 import java.util.Date;
-import java.text.SimpleDateFormat;
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.*;
+import java.io.Serializable;
 
-public class TimerForTask {
-    Date currentDate = new Date();
+public class TimerForTask extends TimerTask implements Serializable{
+    Solutions sol = new Solutions();
+    Timer timer = new Timer();
 
-    public void toNotificate(long ms, Solutions sol){
-
+    public TimerForTask() {
     }
 
-    public long getDifferenceDateInMs(Date taskDate){
-        long difference = currentDate.getTime() - taskDate.getTime();
-        return difference;
+    private TimerForTask(Solutions sol) {
+        this.sol = sol;
     }
 
-    public long parseDateToMs(Date date) {
-        long ms = date.getTime();
-        return ms;
+    public void run(){
+        System.out.println("\nСегодня нужно сделать: " + sol.getSolution());
+    }
+
+    public void toNotificate(Date date, Solutions sol){
+        timer.schedule(new TimerForTask(sol), date);
     }
 }

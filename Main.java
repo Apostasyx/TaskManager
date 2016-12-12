@@ -2,20 +2,17 @@
  * Created by Сергей on 01.12.2016.
  */
 
-import java.io.IOException;
-import java.io.Serializable;
+import java.io.*;
 import java.text.ParseException;
-import java.util.Date;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException, ParseException {
-        Serialization.checkFile();
+        TimeZone.setDefault(TimeZone.getTimeZone("Europe/Samara"));
+
         Console cons = new Console();
-        /*TimerForTask test = new TimerForTask();
-        Date date = new Date();
-        long ms = test.parseDateToMs(date);
-        System.out.println(ms);*/
         cons.menu();
-        Serialization.serData("mySolutions", (Serializable) MethodsForConsole.mySolutions);
+
+        System.exit(0);
     }
 }

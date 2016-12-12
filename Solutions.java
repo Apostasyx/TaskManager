@@ -9,6 +9,7 @@ public class Solutions implements Serializable{
     private String solution;
     private String description;
     private Date date;
+    private Date currentDate;
     private String phoneNumber;
     private String email;
 
@@ -16,10 +17,11 @@ public class Solutions implements Serializable{
 
     }
 
-    public Solutions(String solution, String description, Date date, String phoneNumber, String email){
+    public Solutions(String solution, String description, Date date, Date currentDate, String phoneNumber, String email){
         this.solution = solution;
         this.description = description;
         this.date = date;
+        this.currentDate = currentDate;
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
@@ -34,6 +36,10 @@ public class Solutions implements Serializable{
 
     public Date getDate() {
         return date;
+    }
+
+    public Date getCurrentDate() {
+        return currentDate;
     }
 
     public String getPhoneNumber() {

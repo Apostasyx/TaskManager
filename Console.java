@@ -8,8 +8,9 @@ import java.io.InputStreamReader;
 import java.text.ParseException;
 
 public class Console {
+    MethodsForConsole meth = new MethodsForConsole();
+
     public void menu() throws IOException, ParseException {
-        MethodsForConsole meth = new MethodsForConsole();
         while(true) {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             System.out.println("Выберите опцию:");
