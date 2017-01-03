@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class MethodsForConsole {
-    static ArrayList<Solutions> mySolutions = new ArrayList<Solutions>();
+    static List<Solutions> mySolutions = new ArrayList<Solutions>();
     TimerForTask timer = new TimerForTask();
 
     public void addSolution() throws IOException, ParseException {

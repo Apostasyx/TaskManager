@@ -2,15 +2,25 @@
  * Created by Сергей on 01.12.2016.
  */
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
 import java.util.*;
 import java.io.*;
 
-public class Solutions implements Serializable{
+@XStreamAlias("Solutions")
+public class Solutions{
+
+    @XStreamAlias("Solution")
     private String solution;
+    @XStreamAlias("Description")
     private String description;
+    @XStreamAlias("Date")
     private Date date;
+    @XStreamAlias("Current Date")
     private Date currentDate;
+    @XStreamAlias("Phone Number")
     private String phoneNumber;
+    @XStreamAlias("Email")
     private String email;
 
     public Solutions(){
@@ -52,5 +62,12 @@ public class Solutions implements Serializable{
 
     public void setDate(Date newDate) {
         this.date =  newDate;
+    }
+
+    @Override
+    public String toString(){
+        return "Solutions{" +
+                "Solution" + solution + ", " + "Description" + description + ", " + "Date" + date + ", " +
+                "Current date" + currentDate + ", " + "Phone number" + phoneNumber + ", " + "Email" + email + "}";
     }
 }

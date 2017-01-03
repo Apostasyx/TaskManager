@@ -8,7 +8,7 @@ import java.util.TimerTask;
 import javax.swing.*;
 import java.io.Serializable;
 
-public class TimerForTask extends TimerTask implements Serializable{
+public class TimerForTask extends TimerTask{
     Solutions sol = new Solutions();
     Timer timer = new Timer();
 

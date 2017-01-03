@@ -12,6 +12,8 @@ public class Main {
 
         Console cons = new Console();
         cons.menu();
+        String nameXmlFile = "Solutions";
+        InputOutput.marshaller(MethodsForConsole.mySolutions, nameXmlFile);
 
         System.exit(0);
     }
