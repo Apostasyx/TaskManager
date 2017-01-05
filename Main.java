@@ -10,10 +10,12 @@ public class Main {
     public static void main(String[] args) throws IOException, ParseException {
         TimeZone.setDefault(TimeZone.getTimeZone("Europe/Samara"));
 
+        FileCheck.checkFile();
+
         Console cons = new Console();
         cons.menu();
-        String nameXmlFile = "Solutions";
-        InputOutput.marshaller(MethodsForConsole.mySolutions, nameXmlFile);
+
+        InputOutput.marshaller(MethodsForConsole.mySolutions, "Solutions");
 
         System.exit(0);
     }

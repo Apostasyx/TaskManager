@@ -5,8 +5,6 @@
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
-import javax.swing.*;
-import java.io.Serializable;
 
 public class TimerForTask extends TimerTask{
     Solutions sol = new Solutions();
