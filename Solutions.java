@@ -5,7 +5,6 @@
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import java.util.*;
-import java.io.*;
 
 @XStreamAlias("Solutions")
 public class Solutions{
@@ -16,9 +15,9 @@ public class Solutions{
     private String description;
     @XStreamAlias("Date")
     private Date date;
-    @XStreamAlias("Current Date")
+    @XStreamAlias("CurrentDate")
     private Date currentDate;
-    @XStreamAlias("Phone Number")
+    @XStreamAlias("PhoneNumber")
     private String phoneNumber;
     @XStreamAlias("Email")
     private String email;
@@ -64,10 +63,10 @@ public class Solutions{
         this.date =  newDate;
     }
 
-    @Override
+    /*@Override
     public String toString(){
         return "Solutions{" +
                 "Solution" + solution + ", " + "Description" + description + ", " + "Date" + date + ", " +
                 "Current date" + currentDate + ", " + "Phone number" + phoneNumber + ", " + "Email" + email + "}";
-    }
+    }*/
 }

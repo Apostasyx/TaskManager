@@ -11,12 +11,10 @@ import com.thoughtworks.xstream.converters.extended.EncodedByteArrayConverter;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
 public class InputOutput{
-    Solutions sol = new Solutions();
-    MethodsForConsole meth = new MethodsForConsole();
 
     public static void marshaller(List<Solutions> object, String nameXmlFile) throws IOException {
         XStream xStream = new XStream(new DomDriver());
-        xStream.alias(nameXmlFile, ArrayList.class);
+        xStream.alias(nameXmlFile, List.class);
         xStream.processAnnotations(Solutions.class);
 
         String xml = xStream.toXML(object);
@@ -31,15 +29,16 @@ public class InputOutput{
 
     public static List<Solutions> unmarshalling(File file) throws IOException {
         XStream xStream = new XStream(new DomDriver());
-        xStream.alias("Solutions", ArrayList.class);
-        xStream.alias("Solution", Solutions.class);
+        xStream.alias("mySolutions", List.class);
+        xStream.alias("Solutions", Solutions.class);
+        xStream.aliasField("Solution", Solutions.class, "solution");
         xStream.aliasField("Description", Solutions.class, "description");
         xStream.aliasField("Date", Solutions.class, "date");
-        xStream.aliasField("Current Date", Solutions.class, "currentDate");
-        xStream.aliasField("Phone number", Solutions.class, "phoneNumber");
+        xStream.aliasField("CurrentDate", Solutions.class, "currentDate");
+        xStream.aliasField("PhoneNumber", Solutions.class, "phoneNumber");
         xStream.aliasField("Email", Solutions.class, "email");
         xStream.registerConverter((Converter) new EncodedByteArrayConverter());
 
-        return (List<Solutions>) xStream.fromXML(file);
+        return (ArrayList<Solutions>) xStream.fromXML(file);
     }
 }
