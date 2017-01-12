@@ -15,7 +15,7 @@ public class Main {
         Console cons = new Console();
         cons.menu();
 
-        InputOutput.marshaller(MethodsForConsole.mySolutions, "Solutions");
+        InputOutput.marshaller(MethodsForConsole.mySolutions, "SolutionList");
 
         System.exit(0);
     }

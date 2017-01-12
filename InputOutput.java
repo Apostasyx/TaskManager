@@ -12,10 +12,10 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
 
 public class InputOutput{
 
-    public static void marshaller(List<Solutions> object, String nameXmlFile) throws IOException {
+    public static void marshaller(List<Solution> object, String nameXmlFile) throws IOException {
         XStream xStream = new XStream(new DomDriver());
         xStream.alias(nameXmlFile, List.class);
-        xStream.processAnnotations(Solutions.class);
+        xStream.processAnnotations(Solution.class);
 
         String xml = xStream.toXML(object);
         saveToFile(xml, nameXmlFile);
@@ -27,18 +27,18 @@ public class InputOutput{
         bufferedWriter.close();
     }
 
-    public static List<Solutions> unmarshalling(File file) throws IOException {
+    public static List<Solution> unmarshalling(File file) throws IOException {
         XStream xStream = new XStream(new DomDriver());
-        xStream.alias("mySolutions", List.class);
-        xStream.alias("Solutions", Solutions.class);
-        xStream.aliasField("Solution", Solutions.class, "solution");
-        xStream.aliasField("Description", Solutions.class, "description");
-        xStream.aliasField("Date", Solutions.class, "date");
-        xStream.aliasField("CurrentDate", Solutions.class, "currentDate");
-        xStream.aliasField("PhoneNumber", Solutions.class, "phoneNumber");
-        xStream.aliasField("Email", Solutions.class, "email");
+        xStream.alias("SolutionList", List.class);
+        xStream.alias("Solution", Solution.class);
+        xStream.aliasField("Solution", Solution.class, "solution");
+        xStream.aliasField("Description", Solution.class, "description");
+        xStream.aliasField("Date", Solution.class, "date");
+        xStream.aliasField("CurrentDate", Solution.class, "currentDate");
+        xStream.aliasField("PhoneNumber", Solution.class, "phoneNumber");
+        xStream.aliasField("Email", Solution.class, "email");
         xStream.registerConverter((Converter) new EncodedByteArrayConverter());
 
-        return (ArrayList<Solutions>) xStream.fromXML(file);
+        return (ArrayList<Solution>) xStream.fromXML(file);
     }
 }

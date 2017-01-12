@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class MethodsForConsole {
-    static List<Solutions> mySolutions = new ArrayList<Solutions>();
+    static List<Solution> mySolutions = new ArrayList<Solution>();
     TimerForTask timer = new TimerForTask();
 
     public void addSolution() throws IOException, ParseException {
@@ -33,7 +33,7 @@ public class MethodsForConsole {
         String email = reader.readLine();
         Date currentDate = new Date();
         System.out.println("Время добавления задачи: " + currentDate);
-        Solutions sol = new Solutions(solution, description, date, currentDate, phoneNumber, email);
+        Solution sol = new Solution(solution, description, date, currentDate, phoneNumber, email);
         timer.toNotificate(date, sol);
         mySolutions.add(sol);
         //reader.close();
@@ -41,7 +41,7 @@ public class MethodsForConsole {
 
     public void showSolutions() {
         System.out.println("Показываю список задач: ");
-        for(Solutions sol : mySolutions){
+        for(Solution sol : mySolutions){
             System.out.println(sol.getSolution() + "\n" + sol.getDescription() + "\n" + sol.getDate() + "\n" +
                     sol.getCurrentDate() + "\n" + sol.getPhoneNumber() + "\n" + sol.getEmail());
         }

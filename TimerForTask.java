@@ -7,13 +7,13 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class TimerForTask extends TimerTask{
-    Solutions sol = new Solutions();
+    Solution sol = new Solution();
     Timer timer = new Timer();
 
     public TimerForTask() {
     }
 
-    private TimerForTask(Solutions sol) {
+    private TimerForTask(Solution sol) {
         this.sol = sol;
     }
 
@@ -21,7 +21,7 @@ public class TimerForTask extends TimerTask{
         System.out.println("\nСегодня нужно сделать: " + sol.getSolution());
     }
 
-    public void toNotificate(Date date, Solutions sol){
+    public void toNotificate(Date date, Solution sol){
         timer.schedule(new TimerForTask(sol), date);
     }
 }
