@@ -15,21 +15,17 @@ public class MethodsForConsole {
 
     public void addSolution() throws IOException, ParseException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("Введите имя задачи: ");
+        System.out.println("Введите имя задачи: ");
         String solution = reader.readLine();
-        System.out.println();
-        System.out.print("Введите описание задачи: ");
+        System.out.println("Введите описание задачи: ");
         String description = reader.readLine();
-        System.out.println();
-        System.out.print("Введите дату задачи(в формате дд/мм/гггг): ");
-        SimpleDateFormat preDate = new SimpleDateFormat("dd/MM/yyyy");
+        System.out.println("Введите дату задачи(в формате дд:мм:гггг чч:мм:сс): ");
+        SimpleDateFormat preDate = new SimpleDateFormat("dd:MM:yyyy hh:mm:ss");
         Date date = preDate.parse(reader.readLine());
-        System.out.println();
         System.out.println("Введите контактные данные");
-        System.out.print("Телефонный номер: ");
+        System.out.println("Телефонный номер: ");
         String phoneNumber = reader.readLine();
-        System.out.println();
-        System.out.print("Введите email: ");
+        System.out.println("Введите email: ");
         String email = reader.readLine();
         Date currentDate = new Date();
         System.out.println("Время добавления задачи: " + currentDate);

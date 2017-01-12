@@ -19,7 +19,7 @@ public class Console {
             System.out.println("     3. Отсрочить задачу");
             System.out.println("     4. Удалить задачу");
             System.out.println("     5. Закрыть программу");
-            System.out.print("Введите номер опции: ");
+            System.out.println("Введите номер опции: ");
             int operationNumber = Integer.parseInt(reader.readLine());
             switch (operationNumber) {
                 case 1:
